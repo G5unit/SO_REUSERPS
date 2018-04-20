@@ -1,5 +1,5 @@
 # SO_REUSERPS
-Linux kernel patch to route incoming connections/sockets to listening processes based on RPS network scaling Linux kernel capability. RPS should be enabled for this option to work. rps_get_cpu() function is not called, we are past that point when assigning a listener to incomming socket, instead we lookup cpu id and use that to route the incomming connection.
+Linux kernel patch to route incoming connections/sockets to listening processes based on RPS network scaling Linux kernel capability. RPS should be enabled for this option to work. get_rps_cpu() function is not called, we are past that point when assigning a listener to incomming socket, instead we lookup cpu id and use that to route the incomming connection.
 
 I believe there is a case to be made for configurable incoming linux socket routing. We should be able to route incoming socket connections to the process/thread we want, and not necessarily be limited to one assignment scheme. Currently SO_REUSEPORT provides socket connection balancing across listeners, ones that are listening on the same IP & port, yet does not provide ability to control socket assignment.
 
