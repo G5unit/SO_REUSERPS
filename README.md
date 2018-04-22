@@ -1,6 +1,6 @@
 # SO_REUSERPS
 
-This project was just kicked off, and no usable code is present. I'm working on it..
+This project was just kicked off (April 19th, 2018), and no usable code is present. I'm working on it..
 
 Linux kernel patch to route incoming connections/sockets to listening processes based on RPS network scaling Linux kernel capability. RPS should be enabled for this option to work. get_rps_cpu() function is not called, we are past that point when assigning a listener to incomming socket, instead we lookup cpu id and use that to route the incomming connection.
 
